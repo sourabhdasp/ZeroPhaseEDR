@@ -282,22 +282,11 @@ The original console interface is preserved as `main_console.cpp.bak`. To build 
 The console mode provides a menu-driven interface to all 11 modules without the GUI or automatic scanning.
 
 ---
+## Version 1
+<img width="1424" height="891" alt="image" src="https://github.com/user-attachments/assets/af00bfe6-d9f4-42bc-925e-77ae9692b074" />
 
-## Project Roadmap
+<img width="1413" height="624" alt="image" src="https://github.com/user-attachments/assets/4df10ab0-38d4-4075-a967-9f32c12d4cf7" />
 
-- [x] Phase 1–11: All user-mode intelligence modules
-- [x] GUI dashboard with DirectX11 + ImGui
-- [x] Automatic background scanning
-- [x] Real-time charts (bar, donut, trend line)
-- [x] Responsive layout with proper swap chain resize
-- [ ] ETW-based real-time process/thread event monitoring
-- [ ] Kernel driver for syscall interception and minifilter
-- [ ] Network traffic analysis module
-- [ ] YARA rule integration
-- [ ] Central management server for multi-endpoint deployment
-- [ ] Automated response actions (quarantine, kill, block)
-
----
 
 ## Technical Notes
 
