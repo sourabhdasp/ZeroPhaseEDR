@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <RootNamespace>ZeroPhaseEDR</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ZeroPhaseEDR</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <TargetName>ZeroPhaseEDR</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <TargetName>ZeroPhaseEDR</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ntdll.lib;advapi32.lib;tdh.lib;wtsapi32.lib;userenv.lib;psapi.lib;d3d11.lib;dxgi.lib;dbghelp.lib;wintrust.lib;crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;WIN32_LEAN_AND_MEAN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ntdll.lib;advapi32.lib;tdh.lib;wtsapi32.lib;userenv.lib;psapi.lib;d3d11.lib;dxgi.lib;dbghelp.lib;wintrust.lib;crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="gui_main.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_tables.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="imgui\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="imgui\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="process_intelligence\process_info.cpp" />
+    <ClCompile Include="process_intelligence\process_database.cpp" />
+    <ClCompile Include="process_intelligence\lineage_detector.cpp" />
+    <ClCompile Include="process_intelligence\session_tracker.cpp" />
+    <ClCompile Include="thread_intelligence\thread_info.cpp" />
+    <ClCompile Include="thread_intelligence\thread_database.cpp" />
+    <ClCompile Include="thread_intelligence\thread_monitor.cpp" />
+    <ClCompile Include="thread_intelligence\stack_walker.cpp" />
+    <ClCompile Include="memory_intelligence\memory_info.cpp" />
+    <ClCompile Include="memory_intelligence\memory_database.cpp" />
+    <ClCompile Include="memory_intelligence\memory_monitor.cpp" />
+    <ClCompile Include="memory_intelligence\entropy_analysis.cpp" />
+    <ClCompile Include="dll_intelligence\dll_info.cpp" />
+    <ClCompile Include="dll_intelligence\dll_database.cpp" />
+    <ClCompile Include="dll_intelligence\dll_monitor.cpp" />
+    <ClCompile Include="commandline_intelligence\commandline_info.cpp" />
+    <ClCompile Include="commandline_intelligence\commandline_analyzer.cpp" />
+    <ClCompile Include="commandline_intelligence\commandline_database.cpp" />
+    <ClCompile Include="injection_intelligence\injection_info.cpp" />
+    <ClCompile Include="injection_intelligence\injection_detector.cpp" />
+    <ClCompile Include="injection_intelligence\injection_database.cpp" />
+    <ClCompile Include="syscall_intelligence\syscall_info.cpp" />
+    <ClCompile Include="syscall_intelligence\syscall_detector.cpp" />
+    <ClCompile Include="kernel_intelligence\kernel_info.cpp" />
+    <ClCompile Include="detection_intelligence\detection_engine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="native.hpp" />
+    <ClInclude Include="process_intelligence\process_info.hpp" />
+    <ClInclude Include="process_intelligence\process_database.hpp" />
+    <ClInclude Include="process_intelligence\lineage_detector.hpp" />
+    <ClInclude Include="process_intelligence\session_tracker.hpp" />
+    <ClInclude Include="thread_intelligence\thread_info.hpp" />
+    <ClInclude Include="thread_intelligence\thread_database.hpp" />
+    <ClInclude Include="thread_intelligence\thread_monitor.hpp" />
+    <ClInclude Include="thread_intelligence\stack_walker.hpp" />
+    <ClInclude Include="memory_intelligence\memory_info.hpp" />
+    <ClInclude Include="memory_intelligence\memory_database.hpp" />
+    <ClInclude Include="memory_intelligence\memory_monitor.hpp" />
+    <ClInclude Include="memory_intelligence\entropy_analysis.hpp" />
+    <ClInclude Include="dll_intelligence\dll_info.hpp" />
+    <ClInclude Include="dll_intelligence\dll_database.hpp" />
+    <ClInclude Include="dll_intelligence\dll_monitor.hpp" />
+    <ClInclude Include="commandline_intelligence\commandline_info.hpp" />
+    <ClInclude Include="commandline_intelligence\commandline_analyzer.hpp" />
+    <ClInclude Include="commandline_intelligence\commandline_database.hpp" />
+    <ClInclude Include="commandline_intelligence\commandline_monitor.hpp" />
+    <ClInclude Include="injection_intelligence\injection_info.hpp" />
+    <ClInclude Include="injection_intelligence\injection_detector.hpp" />
+    <ClInclude Include="injection_intelligence\injection_database.hpp" />
+    <ClInclude Include="injection_intelligence\injection_monitor.hpp" />
+    <ClInclude Include="syscall_intelligence\syscall_info.hpp" />
+    <ClInclude Include="syscall_intelligence\syscall_detector.hpp" />
+    <ClInclude Include="syscall_intelligence\syscall_database.hpp" />
+    <ClInclude Include="syscall_intelligence\syscall_monitor.hpp" />
+    <ClInclude Include="kernel_intelligence\kernel_info.hpp" />
+    <ClInclude Include="kernel_intelligence\kernel_database.hpp" />
+    <ClInclude Include="detection_intelligence\detection_info.hpp" />
+    <ClInclude Include="detection_intelligence\detection_engine.hpp" />
+    <ClInclude Include="forensics_intelligence\forensics_info.hpp" />
+    <ClInclude Include="production_intelligence\production_info.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

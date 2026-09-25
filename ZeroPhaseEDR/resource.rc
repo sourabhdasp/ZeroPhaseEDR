@@ -1,0 +1,38 @@
+// ZeroPhase EDR - Resource definitions
+// Embeds the ZP logo as the application icon
+
+#include <winres.h>
+
+// Application icon (IDI_ICON1 = 101)
+// The first icon in the .rc file becomes the EXE icon
+IDI_ICON1 ICON "zp.ico"
+
+// Version info
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION    1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEFLAGSMASK  VS_FFI_FILEFLAGSMASK
+FILEFLAGS      0
+FILEOS         VOS_NT_WINDOWS32
+FILETYPE       VFT_APP
+FILESUBTYPE    VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName",      "ZeroPhase Security"
+            VALUE "FileDescription",  "ZeroPhase EDR - Endpoint Detection & Response"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "ZeroPhaseEDR"
+            VALUE "LegalCopyright",   "Copyright (C) 2026 ZeroPhase Security"
+            VALUE "OriginalFilename", "ZeroPhaseEDR.exe"
+            VALUE "ProductName",      "ZeroPhase EDR"
+            VALUE "ProductVersion",   "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
